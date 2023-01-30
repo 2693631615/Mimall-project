@@ -1,0 +1,35 @@
+//flex布局复用 
+@mixin flex($hov: space-between, $col:center) {
+  display: flex;
+  justify-content: $hov;
+  align-items: $col;
+}
+//行内元素设置背景图复用方法
+@mixin bgImg ($wh, $hg, $img:'', $mr: 0, $size:contain) {
+  display: inline-block;
+  width: $wh;
+  height: $hg;
+  background: url($img) no-repeat center;
+  background-size: $size;
+  margin-right: $mr
+}
+//按钮样式设置
+@mixin BtnSize ($wh, $hg, $bgc:#f60, $bc:#fff) {
+  display: inline-block;
+  width: $wh;
+  height: $hg;
+  background-color: $bgc;
+  border: 1px solid $bc;
+  cursor: pointer;
+  &:hover {
+    opacity: .8;
+  }
+}
+//固定定位设置
+@mixin fixed ($tp:auto, $lt:auto, $rt:auto, $bm:auto) {
+  position: fixed;
+  top: $tp;
+  left: $lt;
+  right: $rt;
+  bottom: $bm;
+}
